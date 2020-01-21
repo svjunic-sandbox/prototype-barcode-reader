@@ -10,7 +10,6 @@ if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'fu
     console.log('click');
     if (!reader) {
       reader = new Reader('reader');
-      await reader.init();
     }
     if (reader.isLisning) return;
 

@@ -13,12 +13,6 @@ export default class Reader {
     this.isLisning = false;
   }
 
-  async init() {
-    this.videoInputDevices = await this.codeReader.listVideoInputDevices();
-    console.log('mogeta');
-    console.log(this.videoInputDevices);
-  }
-
   listen() {
     return new Promise(async (resolve, reject) => {
       if (this.isLisning) {
@@ -27,8 +21,6 @@ export default class Reader {
       }
 
       this.isLisning = true;
-
-      console.log(this.videoInputDevices);
 
       // undefined で environment facing
       const result = await this.codeReader.decodeFromInputVideoDevice(undefined, 'reader');
