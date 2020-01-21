@@ -5,7 +5,7 @@ import Quagga from 'quagga';
  * @class
  * @classdesc description
  */
-export default class description {
+export default class Reader {
   /** @constructs */
   constructor($reader) {
     this.$stage = $reader;
