@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZXing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      input[type="text"] {
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px solid #000;
+      }
+      .drawingBuffer {
+        position: absolute;
+        z-index: -1;
+        top: -9999;
+        left: -9999;
+      }
+    </style>
+    <script src="./common/js/vendor.js" charset="utf-8" defer></script>
+    <script src="./common/js/index.js" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <div id="reader"></div>
+    <button id="try">読み込む</button>
+    <input type="text" id="code" value="ここに値が入る" />
+  </body>
+</html>
