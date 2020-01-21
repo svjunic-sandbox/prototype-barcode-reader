@@ -8,7 +8,7 @@ const DOCUMENT_ROOT = '../../docs/';
 
 module.exports = function() {
   const entries = {
-    'common/js/index': path.join(__dirname, './resources/index.js')
+    'quagga/js/index': path.join(__dirname, './resources/index.js')
   };
 
   const watchOptions = {
