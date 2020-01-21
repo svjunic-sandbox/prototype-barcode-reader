@@ -1,5 +1,13 @@
 import Quagga from 'quagga';
 
+console.log(document.querySelector('#live'));
+
+if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
+  console.log('enable');
+} else {
+  console.log('disable');
+}
+
 Quagga.init(
   {
     inputStream: {
@@ -8,7 +16,7 @@ Quagga.init(
       target: document.querySelector('#live') // Or '#yourElement' (optional)
     },
     decoder: {
-      readers: ['code_128_reader']
+      readers: ['ean_reader']
     }
   },
   function(err) {
@@ -20,3 +28,8 @@ Quagga.init(
     Quagga.start();
   }
 );
+
+Quagga.onDetected(success => {
+  const code = success.codeResult.code;
+  if (calc(code)) alert(code);
+});
