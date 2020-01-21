@@ -23,7 +23,7 @@ module.exports = function() {
 
   let optimization = {
     splitChunks: {
-      name: 'common/js/vendor',
+      name: 'quagga/js/vendor',
       chunks: 'initial'
     }
   };
