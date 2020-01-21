@@ -1,35 +1,27 @@
-import Quagga from 'quagga';
-
-console.log(document.querySelector('#live'));
+import Reader from './reader.js';
 
 if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
-  console.log('enable');
+  const $try = document.querySelector('#try');
+  const $reader = document.querySelector('#reader');
+  const $code = document.querySelector('#code');
+
+  let reader;
+
+  $try.addEventListener('click', () => {
+    console.log('click');
+    if (!reader) reader = new Reader($reader);
+    if (reader.isLisning) return;
+
+    $try.innerHTML = '読込中';
+    $try.disabled = true;
+
+    reader.listen().then(code => {
+      $code.value = code;
+      console.log(code);
+      $try.innerHTML = '再読み込み';
+      $try.disabled = false;
+    });
+  });
 } else {
-  console.log('disable');
+  console.log('対応してません');
 }
-
-Quagga.init(
-  {
-    inputStream: {
-      name: 'Live',
-      type: 'LiveStream',
-      target: document.querySelector('#live') // Or '#yourElement' (optional)
-    },
-    decoder: {
-      readers: ['ean_reader']
-    }
-  },
-  function(err) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log('Initialization finished. Ready to start');
-    Quagga.start();
-  }
-);
-
-Quagga.onDetected(success => {
-  const code = success.codeResult.code;
-  if (calc(code)) alert(code);
-});
