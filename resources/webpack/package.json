@@ -16,33 +16,16 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/runtime": "^7.0.0",
-    "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.6",
     "browserslist": "^4.3.5",
     "core-js": "^3.1.4",
-    "css-loader": "^1.0.0",
-    "expose-loader": "^0.7.3",
-    "html-loader": "^0.4.5",
-    "jsdoc": "^3.5.5",
-    "lodash": "4.17.4",
-    "minami": "^1.2.3",
     "regenerator-runtime": "^0.13.2",
     "regenerator-transform": "^0.13.3",
-    "regexpu-core": "^4.4.0",
-    "style-loader": "^0.22.1",
     "uglifyjs-webpack-plugin": "^2.1.3",
-    "util.promisify": "^1.0.0",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
-    "css-loader": "^1.0.0",
-    "eligrey-classlist-js-polyfill": "^1.2.20180112",
-    "es6-promise": "4.2.4",
-    "js-cookie": "^2.2.0",
-    "perfect-scrollbar": "^1.4.0",
-    "stickyfill": "^1.1.1-strict",
-    "style-loader": "^0.22.1",
-    "velocity-animate": "1.5.2"
+    "quagga": "^0.12.1"
   }
 }
