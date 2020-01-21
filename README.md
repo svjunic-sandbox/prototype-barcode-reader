@@ -1,3 +1,3 @@
-# prototype-quaggaJS
+# prototype-barcode-reader
 
-https://svjunic.github.io/prototype-quaggaJS/
+https://svjunic.github.io/prototype-barcode-reader/
