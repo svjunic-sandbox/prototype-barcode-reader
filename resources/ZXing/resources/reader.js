@@ -1,14 +1,14 @@
 import { BrowserMultiFormatReader } from '@zxing/library';
 
 /**
- * quaggaのラッパー
+ * zxing/libraryのラッパー
  * @class
  * @classdesc description
  */
 export default class Reader {
   /** @constructs */
-  constructor($reader) {
-    this.$stage = $reader;
+  constructor(stage) {
+    this.stage = stage;
     this.codeReader = new BrowserMultiFormatReader();
     this.isLisning = false;
   }
@@ -23,7 +23,7 @@ export default class Reader {
       this.isLisning = true;
 
       // undefined で environment facing
-      const result = await this.codeReader.decodeFromInputVideoDevice(undefined, 'reader');
+      const result = await this.codeReader.decodeFromInputVideoDevice(undefined, this.stage);
 
       resolve(result);
 
