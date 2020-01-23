@@ -21,13 +21,18 @@
         top: -9999;
         left: -9999;
       }
+      #reader {
+        width: 100vw;
+        height: 100vh;
+      }
     </style>
     <script src="./zxing/js/vendor.js" charset="utf-8" defer></script>
     <script src="./zxing/js/index.js" charset="utf-8" defer></script>
   </head>
   <body>
-    <video id="reader" width="300" height="200" style="border: 1px solid gray"></video>
-    <button id="try">読み込む</button>
+    <video id="reader" style="border: 1px solid gray" hidden></video>
+    <button id="try" type="button">読み込む</button>
+    <button id="prev" type="button">戻る</button>
     <input type="text" id="code" value="ここに値が入る" />
   </body>
 </html>

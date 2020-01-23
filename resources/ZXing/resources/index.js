@@ -2,6 +2,7 @@ import Reader from './reader.js';
 
 if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
   const $try = document.querySelector('#try');
+  const $prev = document.querySelector('#prev');
   const $code = document.querySelector('#code');
 
   let reader;
@@ -22,12 +23,19 @@ if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'fu
         if (!code) return;
         $code.value = code;
         console.log(code);
-        $try.innerHTML = '再読み込み';
-        $try.disabled = false;
       })
       .catch(e => {
+        console.log('ahoge');
         console.log(e);
+      })
+      .finally(() => {
+        $try.innerHTML = '再読み込み';
+        $try.disabled = false;
       });
+  });
+
+  $prev.addEventListener('click', async () => {
+    reader.unlisten();
   });
 } else {
   console.log('対応してません');
