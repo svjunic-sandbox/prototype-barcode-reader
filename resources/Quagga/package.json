@@ -23,7 +23,7 @@
     "regenerator-transform": "^0.14.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "quagga": "^0.12.1"
